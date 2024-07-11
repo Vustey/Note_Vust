@@ -53,7 +53,7 @@ router.put('/:id', async(req,res)=>{
             note.content = req.body.content;
         }
         const updatNote = await note.save();
-        res.json(updatNote);
+        res.status(200).json(updatNote);
     } catch (err) {
         res.status(500).json({message: err.message});
     }
